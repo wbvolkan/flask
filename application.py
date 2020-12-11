@@ -10,7 +10,6 @@ app.secret_key = os.urandom(24)
 @app.route("/deneme")
 def home():
 	return render_template('index.html')
-
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
