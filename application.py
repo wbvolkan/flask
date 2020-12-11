@@ -49,6 +49,7 @@ def index():
 		return "İşlem başarılı... /photo adresinde fotoğrafı görebilirsiniz."
 	if request.method == 'GET':
 		return "Bad request method..."
+	return "selam"
 
 def find_coeffs(source_coords, target_coords):
     matrix = []
