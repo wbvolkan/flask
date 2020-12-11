@@ -14,6 +14,7 @@ def index():
         url = 'https://94dizayn.com/images/ateslogo.png'
         urllib.request.urlretrieve(url,".png")
         return "tamamlandı"
+    return "metod get"
 
 if __name__ == '__main__':
     app.run(debug=True)
