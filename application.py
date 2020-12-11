@@ -5,7 +5,6 @@ import cv2
 import requests
 from flask import Flask, jsonify, session, render_template, request, redirect, g, url_for, after_this_request, make_response
 import os
-import time
 import pathlib
 import urllib.request
 
