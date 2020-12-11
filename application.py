@@ -12,7 +12,7 @@ app.secret_key = os.urandom(24)
 def index():
     if request.method == 'POST':
         url = 'https://94dizayn.com/images/ateslogo.png'
-        urllib.request.urlretrieve(url".png")
+        urllib.request.urlretrieve(url,".png")
         return "tamamlandı"
 
 if __name__ == '__main__':
