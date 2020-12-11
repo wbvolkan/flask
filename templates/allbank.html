@@ -1,0 +1,124 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Chat</title>
+		<script type="text/javascript" src="{{ url_for('static',filename='js/chatbotscript.js') }}"></script>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/chatbotcss.css') }}">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.js"></script>
+	</head>
+	<!--Coded With Love By Mutiullah Samim-->
+	<body>
+		<div class="container-fluid h-100">
+			<div class="row justify-content-center h-100">
+				<div class="col-md-8 col-xl-6 chat" style="margin-top: 30px;">
+					<div class="logo" style="padding-top: 42;
+    					
+    					position: absolute;
+    					margin-left: 24.8;">
+						<img src="{{url_for('static', filename='logo.png')}}" style="width: 62px;">
+					</div>
+					<div class="card">
+						<div class="card-header msg_head">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont">
+								<img src="{{url_for('static', filename='logo2.png')}}" class="rounded-circle user_img">
+								<span class="online_icon"></span>
+								</div>
+								<div class="user_info">
+									<span>Zack-AI Bot</span>
+									<p>7 / 24 Online</p>
+								</div>
+								<div class="video_cam">
+									<span><i class="fas fa-video"></i></span>
+									<span><i class="fas fa-phone"></i></span>
+								</div>
+							</div>
+							<div class="action_menu">
+
+							</div>
+						</div>
+						<div class="card-body msg_card_body" id='messageBody' style="padding: 20px 20px 20px 20px!important;">        		
+						</div>
+						<div class="card-footer">
+							<div class="input-group">
+								<div class="input-group-append">
+									<span class="input-group-text attach_btn"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+								</div>
+								<input id="userBox" class="form-control type_msg" type="text" onkeydown="if (event.keyCode == 13) {myFunction(),chatbot()}">
+								<div class="input-group-append">
+			<span class="input-group-text send_btn" id="selam"><i class="fas fa-location-arrow"></i></span>
+
+
+		<script>
+	
+		function myFunction()
+            {
+            var countup = this;
+            var user1 = document.getElementById("userBox").value;
+            if ( user1 == "") {
+                alert("Mesaj kısmı boş bırakılamaz...")}
+
+            else{                                                                   
+            	var message = user1;
+            	var kullanicimesaj = document.createElement('div');
+            	kullanicimesaj.className = 'd-flex justify-content-end mb-4';
+            	kullanicimesaj.innerHTML = '<div class="msg_cotainer_send">'+message+'</div>'+'<div class="img_cont_msg">'+'<img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" class="rounded-circle user_img_msg">'+'</div>';
+            	document.getElementById('messageBody').appendChild(kullanicimesaj);
+            	var div = $("#messageBody");
+			    div.scrollTop(div.prop('scrollHeight'));
+
+            }}
+            
+        </script>
+
+
+        <script>
+        	
+        function chatbot()
+			{
+            	var countup = this;
+            	var botcevap = document.getElementById("userBox").value;
+            	if ( botcevap == "") {
+                				}
+                else{
+                	document.getElementById('userBox').value = "";
+            	var data = {"text": botcevap};
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', "http://127.0.0.1:5000/mngrequest", true)  
+                xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+                xhr.send(JSON.stringify(data));
+                xhr.onload = function() {
+                var responsedata = (`${xhr.response}`);
+                var div = $("#chatLog");
+                div.scrollTop(div.prop('scrollHeight'));
+            	var message = responsedata;
+            	var newNode = document.createElement('div');
+            	newNode.className = 'd-flex justify-content-start mb-4';
+            	newNode.innerHTML = '<div class="img_cont_msg">'+'<img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" class="rounded-circle user_img_msg">'+'</div>'+'<div class="msg_cotainer">'+message+'</div>';
+				
+            	document.getElementById('messageBody').appendChild(newNode);
+            	var div = $("#messageBody");
+			    div.scrollTop(div.prop('scrollHeight'));}
+
+
+            }}
+        
+		</script>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
