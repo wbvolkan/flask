@@ -44,11 +44,6 @@ elasticsearch==7.9.1
 env==0.1.0
 eventlet==0.29.1
 Flask==0.12.5
-Flask-Cors==3.0.9
-Flask-Migrate==2.5.3
-Flask-Session==0.3.2
-Flask-SocketIO==4.3.1
-Flask-SQLAlchemy==2.4.4
 future==0.18.2
 fuzzywuzzy==0.18.0
 getip2==1.6
