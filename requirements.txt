@@ -146,7 +146,6 @@ tensorboard-plugin-wit==1.6.0.post3
 tensorboardX==1.5
 threaded==4.0.8
 tk==0.1.0
-traitlets==5.0.4
 typing-extensions==3.7.4.3
 typing-inspect==0.6.0
 tzlocal==2.1
