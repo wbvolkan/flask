@@ -18,8 +18,7 @@ def indexrequest():
 @app.route('/', methods=['GET', 'POST'])
 def index():
 	data =[]
-	url2= "https://94dizayn.com/images/min/"
-	url = "https://94dizayn.com/images/min/"
+	url = "https://94dizayn.com/images/min/duru.jpg"
 	if request.method == 'POST':
 		stand = request.get_json()["stand"]
 		solafis = request.get_json()["solafis"]
@@ -38,14 +37,8 @@ def index():
 		data.append(solafis)
 		data.append(tv)
 		data.append(logo)
-		for e in data:
-			print(e)
-			print[data]
-			if e != "none" :
-				url = url + "/"+e+".jpg"
-				print(url)
-				urllib.request.urlretrieve(url,e+".png")
-				url = url2
+		urllib.request.urlretrieve(url,solafis+".png")
+		stand1(solafis, solafis, solafis, solafis, solafis_x, solafis_y, saafis_x, saafis_y, tv_x, tv_y, logo_x, logo_y)
 		return "İşlem başarılı... /photo adresinde fotoğrafı görebilirsiniz."
 	if request.method == 'GET':
 		return "Bad request method..."
@@ -157,6 +150,9 @@ def stand1(solafis,sagafis, tv, logo, solafis_x, solafis_y, saafis_x, saafis_y, 
 	#back_im.save('static/rocket_pillow_paste.png', quality=95)
 	transform = back_im.resize((4096, 2048),Image.ANTIALIAS)
 	transform.save('static/rocket_pillow_paste.png')
+
+		
+
 
 
 if __name__ == '__main__':
