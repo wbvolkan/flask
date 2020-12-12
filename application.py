@@ -42,7 +42,6 @@ def index():
 		for e in data:
 			if e != "none" :
 				url = url + "/"+e+".jpg"
-				print(url)
 				urllib.request.urlretrieve(url,e+".png")
 				url = url2
 		stand1(solafis, sagafis, tv, logo, solafis_x, solafis_y, saafis_x, saafis_y, tv_x, tv_y, logo_x, logo_y)
