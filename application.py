@@ -39,6 +39,8 @@ def index():
 		data.append(tv)
 		data.append(logo)
 		for e in data:
+			print(e)
+			print[data]
 			if e != "none" :
 				url = url + "/"+e+".jpg"
 				print(url)
