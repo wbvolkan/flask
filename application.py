@@ -18,8 +18,8 @@ def indexrequest():
 @app.route('/', methods=['GET', 'POST'])
 def index():
 	data =[]
-	url2= "https://94dizayn.com/images/min/"
-	url = "https://94dizayn.com/images/min/"
+	url2= "https://94dizayn.com/images/min"
+	url = "https://94dizayn.com/images/min"
 	if request.method == 'POST':
 		stand = request.get_json()["stand"]
 		solafis = request.get_json()["solafis"]
