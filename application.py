@@ -37,6 +37,7 @@ def index():
 		data.append(solafis)
 		data.append(tv)
 		data.append(logo)
+		return url + " " + solafis
 		urllib.request.urlretrieve(url,solafis+".png")
 		stand1(solafis, solafis, solafis, solafis, solafis_x, solafis_y, saafis_x, saafis_y, tv_x, tv_y, logo_x, logo_y)
 		return "İşlem başarılı... /photo adresinde fotoğrafı görebilirsiniz."
