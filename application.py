@@ -17,9 +17,11 @@ def indexrequest():
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-
-	url = "https://94dizayn.com/images/min/11.jpg"
-	urllib.request.urlretrieve(url,"deneme"+".png")
+	if request.method == 'POST':
+		url = "https://94dizayn.com/images/min/11.jpg"
+		urllib.request.urlretrieve(url,"deneme"+".png")
+		return "çalıştı"
+	return"bad req"
 
 
 if __name__ == '__main__':
