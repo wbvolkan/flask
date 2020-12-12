@@ -18,7 +18,7 @@ def indexrequest():
 @app.route('/', methods=['GET', 'POST'])
 def index():
 	data =[]
-	url = "https://94dizayn.com/images/min/duru.jpg"
+	url = "https://94dizayn.com/images/min/"
 	if request.method == 'POST':
 		stand = request.get_json()["stand"]
 		solafis = request.get_json()["solafis"]
@@ -37,7 +37,7 @@ def index():
 		data.append(solafis)
 		data.append(tv)
 		data.append(logo)
-		return url + " " + solafis
+		return url +solafis +".jpg"
 		urllib.request.urlretrieve(url,solafis+".png")
 		stand1(solafis, solafis, solafis, solafis, solafis_x, solafis_y, saafis_x, saafis_y, tv_x, tv_y, logo_x, logo_y)
 		return "İşlem başarılı... /photo adresinde fotoğrafı görebilirsiniz."
